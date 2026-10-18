@@ -8,7 +8,9 @@ def main():
     screen, hexagons, char_hexagons, clock, num_in_direction = render.initialize()
     terminated = False
 
+    debug = gui.Text(screen, 48)
     texts, objects = gui.main_menu(screen)
+    texts.append(debug)
     while not terminated:
         screen.fill((255, 255, 255))
         for event in pygame.event.get():
@@ -16,9 +18,13 @@ def main():
                 terminated = True
             elif event.type == pygame.VIDEORESIZE:
                 screen, hexagons, char_hexagons = render.resize(screen, event, num_in_direction)
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                pos = pygame.mouse.get_pos()
+                debug.message = str(pos)
+                debug.x_offset, debug.y_offset = pos
 
-            for item in objects:
-                item.handle_event(event)
+            # for item in objects:
+            #     item.handle_event(event)
 
 
         for hexagon in hexagons:
