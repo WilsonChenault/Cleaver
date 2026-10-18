@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="588fb551-51d3-4e73-90c6-e3810747d784" name="Changes" comment="Deleted irrelevant files">
+    <list default="true" id="588fb551-51d3-4e73-90c6-e3810747d784" name="Changes" comment="Added Button and Text classes. Filled out gui.main_menu(), though its still a little wacky...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
@@ -209,7 +209,31 @@
       <option name="project" value="LOCAL" />
       <updated>1792221495802</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Deleted irrelevant files">
+      <option name="closed" value="true" />
+      <created>1792306653757</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1792306653757</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Added some debug code to click and get position of cursor, and added a text/object render loop">
+      <option name="closed" value="true" />
+      <created>1792306688518</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1792306688518</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Added Button and Text classes. Filled out gui.main_menu(), though its still a little wacky...">
+      <option name="closed" value="true" />
+      <created>1792306786116</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1792306786116</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -234,6 +258,8 @@
     <MESSAGE value="Added input box functionality, all testing. Most of this won't remain but just learning on how to do this kinda stuff" />
     <MESSAGE value="Replaces text.py, has same functions but will be the home of all gui functions and classes. Starting with InputBox! Will be looking to do HeadsUpDisplay or HUD in the near future to start on character information display." />
     <MESSAGE value="Deleted irrelevant files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Deleted irrelevant files" />
+    <MESSAGE value="Added some debug code to click and get position of cursor, and added a text/object render loop" />
+    <MESSAGE value="Added Button and Text classes. Filled out gui.main_menu(), though its still a little wacky..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Button and Text classes. Filled out gui.main_menu(), though its still a little wacky..." />
   </component>
 </project>
