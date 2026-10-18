@@ -109,6 +109,11 @@ class Button:
     active: bool = False
     message: str = ''
     font: pygame.font.Font | None = None
+    adjusted_dimension: tuple[float, float] = (0, 0) # uhhh this is basically
+                                                     # only here for handle_event
+                                                     # because the dimension from
+                                                     # the class might not be accurate
+                                                     # to what is being drawn...
 
 
     def render(self):
@@ -136,10 +141,10 @@ class Button:
         else:
             x_margin = self.dimension[0] - button_text.width
         y_margin = 0.2 * h
-        adjusted_dimension = (self.dimension[0], self.dimension[1] + y_margin)
+        self.adjusted_dimension = (self.dimension[0], self.dimension[1] + y_margin)
 
-        button_fill = pygame.Rect(self.position, adjusted_dimension)
-        button_border = pygame.Rect(self.position, adjusted_dimension)
+        button_fill = pygame.Rect(self.position, self.adjusted_dimension)
+        button_border = pygame.Rect(self.position, self.adjusted_dimension)
 
         pygame.draw.rect(self.screen, self.color, button_fill, 0)
         pygame.draw.rect(self.screen, self.border_color, button_border, 2)
@@ -150,8 +155,20 @@ class Button:
 
     # WIP
     def handle_event(self, event):
-        x = 1
+        handle_box = pygame.Rect(self.position, self.adjusted_dimension)
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if handle_box.collidepoint(event.pos):
+                self.activate()
+            else:
+                self.active = False
+        else:
+            self.active = False
 
+    def activate(self):
+        if not self.active:
+            self.active = True
+        else:
+            self.active = False
 
     @property
     def color(self):
