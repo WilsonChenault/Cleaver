@@ -191,8 +191,10 @@ def render_text(screen, font, message: str, position: tuple[float, float], cente
 def main_menu(screen) -> tuple[list, list]:
     screen.fill((255, 255, 255))
     # oops I think we need to get the windows size instead of the monitor's size :p
-    screen_height = screen.get_height()
-    screen_width = screen.get_width()
+    # True!
+    info = pygame.display.Info()
+    screen_height = info.current_h
+    screen_width = info.current_w
 
     title_text = "Cleaver the Pit"
     subtitle_text = "Wilson Chenault & Annabel Mehari"
@@ -202,9 +204,9 @@ def main_menu(screen) -> tuple[list, list]:
     settings_button = "Settings"
 
     objects = [
-        Button(screen, (300, 80), screen_width * 0.5, screen_height * 0.48,
+        Button(screen, (200, 60), screen_width * 0.5, screen_height * 0.48,
                message = play_button),
-        Button(screen, (300, 80), screen_width * 0.5, screen_height * 0.60,
+        Button(screen, (200, 60), screen_width * 0.5, screen_height * 0.60,
                message = settings_button)
     ]
 
@@ -219,6 +221,19 @@ def main_menu(screen) -> tuple[list, list]:
         text.render(text.position)
 
     return texts, objects
+
+def character_sheet(screen):
+
+
+def mode_select(screen):
+    screen.fill((255, 255, 255))
+
+    info = pygame.display.Info()
+    screen_height = info.current_h
+    screen_width = info.current_w
+
+    ranchar_text = 'Generate Random Character'
+
 
 def input_box(screen, font, vertices: tuple[float, ...]) -> InputBox:
     """Renders input box"""

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="588fb551-51d3-4e73-90c6-e3810747d784" name="Changes" comment="Deleted irrelevant files">
+    <list default="true" id="588fb551-51d3-4e73-90c6-e3810747d784" name="Changes" comment="Fixed main.py, did some gross gross gross stuff in gui.py but made the buttons clickable!!!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />

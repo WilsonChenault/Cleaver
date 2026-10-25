@@ -11,9 +11,6 @@ def main():
     game_started = False
     texts, objects = gui.main_menu(screen)
 
-    #debug = gui.Text(screen, 48)
-    #texts.append(debug)
-
     while not terminated:
 
         screen.fill((255, 255, 255))
@@ -30,10 +27,6 @@ def main():
                     clicked = item.handle_event(event)
                     if clicked and item.message == "Play":
                         game_started = True
-
-                # pos = pygame.mouse.get_pos()
-                # debug.message = str(pos)
-                # debug.x_offset, debug.y_offset = pos
 
         if game_started:
             for hexagon in hexagons:
