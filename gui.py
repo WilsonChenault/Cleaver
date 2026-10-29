@@ -222,8 +222,8 @@ def main_menu(screen) -> tuple[list, list]:
 
     return texts, objects
 
-# def character_sheet(screen):
-
+def character_sheet(screen):
+    1
 
 def mode_select(screen):
     screen.fill((255, 255, 255))

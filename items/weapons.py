@@ -1,24 +1,37 @@
-import numpy as np
+import random
 
-class WeaponStats:
-    def __init__(self, nametag, tier, randdmg, bonusdmg):
+class Weapon:
+    def __init__(self, nametag, tier, die_count, dice, bonus_dmg):
         self.nametag = nametag
         self.tier = tier
-        self.randdmg = randdmg
-        self.bonusdmg = bonusdmg
+        self.die_count = die_count
+        self.dice = dice
+        self.bonus_dmg = bonus_dmg
+
+    def roll_damage(self) -> int:
+        damage = random.choices(range(1, self.dice), k = self.die_count)
+        return damage
+
 
 # List of all Tier I weapons
-dagger = WeaponStats('Dagger', 1, np.sum(np.random.randint(1, 5, size = 2)), 0)
-smallsword = WeaponStats('Small Sword', 1, np.sum(np.random.randint(1, 5, size = 3)), 0)
-smallmace = WeaponStats('Small Mace', 1, np.random.randint(1, 9, size = 1), 0)
-smallhammer = WeaponStats('Small Hammer', 1, np.random.randint(1, 7, size = 1), 0)
-shortspear = WeaponStats('Short Spear', 1, np.sum(np.random.randint(1, 5, size = 3)), 0)
-mailedfist = WeaponStats('Mailed Fist', 1, np.random.randint(1, 5, size = 1), 0)
-smallaxe = WeaponStats('Small Axe', 1, np.sum(np.random.randint(1, 5, size = 2)), 0)
-club = WeaponStats('Club', 1, np.random.randint(1, 7, size = 1), 0)
-smalltrident = WeaponStats('Small Trident', 1, np.random.randint(1, 9, size = 1), 0)
-cleaver = WeaponStats('Cleaver', 1, np.random.randint(1, 11, size = 1), 0)
+dagger = Weapon('Dagger', 1, 2, 4, 0)
+small_sword = Weapon('Small Sword', 1, 3, 4, 0)
+small_mace = Weapon('Small Mace', 1, 1, 8, 0)
+small_hammer = Weapon('Small Hammer', 1, 1, 6, 0)
+short_spear = Weapon('Short Spear', 1, 3, 4, 0)
+mailed_fist = Weapon('Mailed Fist', 1, 1, 4, 0)
+small_axe = Weapon('Small Axe', 1, 2, 4, 0)
+club = Weapon('Club', 1, 1, 6, 0)
+small_trident = Weapon('Small Trident', 1, 1, 8, 0)
+cleaver = Weapon('Cleaver', 1, 1, 10, 0)
 
 # Tier I weapons list
-weapons_tier1 = [dagger, smallsword, smallmace, smallhammer, shortspear, mailedfist,
-                 smallaxe, club, smalltrident, cleaver]
+weapons_tier1 = [dagger, small_sword, small_mace, small_hammer, short_spear, mailed_fist,
+                 small_axe, club, small_trident, cleaver]
+weapons_tier2 = []
+weapons_tier3 = []
+
+weapons_dict = {1: weapons_tier1, 2: weapons_tier2, 3: weapons_tier3}
+
+def weapon_list(tier):
+    return weapons_dict[tier]
